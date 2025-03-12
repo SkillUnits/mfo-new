@@ -358,7 +358,6 @@
             }
 
             let pathName = window.location.search;
-
             window.history.pushState({step: 1}, "step1", "/" + pathName);
 
             $(window).on('popstate', (e) => {
@@ -394,26 +393,30 @@
                 phone = phone.replace(/\s+/g, '');
                 // var dataString = 'name=name&utm_campaign=&utm_content=&utm_term=' + '&phone=' + phone;
 
-                if(phone_length == 18){
+                if(phone_length == 18) {
+                    $(window).scrollTop(0);
+                    window.history.pushState({step: 3}, "step3", "/" + pathName);
 
-                    $.ajax({
-                        type: "POST",
-                        url: "/savephone",
-                        data: {
-                            phone: phone,
-                            fp: window.fpData ? window.fpData.uniq_code : null,
-                        },
-                        success: function(res) {
-				const fData = JSON.parse(res);
-				if (Object.keys(fData).length !== 0) {
-					handleFp(fData);
-				}
-                            $(window).scrollTop(0);
-                            window.history.pushState({step: 3}, "step3", "/" + pathName);
-                        }
-                    });
+                    // $.ajax({
+                    //     type: "POST",
+                    //     url: "/savephone",
+                    //     data: {
+                    //         phone: phone,
+                    //         fp: window.fpData ? window.fpData.uniq_code : null,
+                    //     },
+
+                    //     // {"uniq_code":"mCTc8KYjyPbi3fEe","mf_keys":["creditpluskz","credit365kz","zaimerkz","onecreditkz","Finlite"],"scores":{"bitcapital":1,"slon":2,"egroshi":3,"miloan":4,"selfiecredit":5,"tvoyapozika":6,"creditkasa":7,"pango":8,"mycredit":9,"credit365kz":10,"avans":11,"creditbarkz":12,"credit7":13,"finsfera":14,"suncredit":15,"firstcredit":16,"creditpluskz":17,"onecreditkz":18,"microcash":19,"top1money":20,"starfin":21,"limon":22,"zaimerkz":23,"tengo":24,"Finlite":25,"loanplus":26,"sgroshi":27,"acreditkz":28,"trebacredit":29,"excashkz":30,"moneymankz":31,"monto":32,"lovilave":33,"lehko":34,"slotoking":35,"pinup":36,"cosmolot":37,"vulkan":38,"favbet":39,"creditnice":40,"first":41,"champion":42,"supergra":43,"slotscity":44,"slotcity":45,"money4you":46,"clickcredit":47,"credisend":48,"moneyveo":49,"timezaimkz":50,"altyncoin":51,"qanatkz":52,"turbomoneykz":53,"creditpuls":54,"nextcredit":55,"havakz":56,"dengiclickkz":57,"kokekz":58,"tengokz":59,"zaimivsemkz":60,"robocash":61,"kekekz":62,"zaimyvsemkz":63,"creditop":64,"kvikukz":65,"soscredit":66,"avira":67,"cly":68,"finbar":69,"neocreditkz":70,"pangroshi":71,"tengeda":72,"zaimyvsem":73,"gozaym":74,"easycash":75,"creditos\n\nusoseda\n\nnicecredit":76,"usoseda":77,"nicecredit":78,"microcredit":79,"mrgrivnik":80,"gmoney":81,"neozaym":82,"blomi":83,"easycashua":84,"joytenge":85,"finbert":86,"aksha":87,"prosto":88,"smartiway":89,"crypsee":90,"credos":91,"solva":92,"turbogroshi":93,"procent":94,"forzaem":95,"minicredit":96,"clickmoney":97,"creditor":98,"kashtan":99,"finab":100,"bizpozyka":101,"navse":102,"alexcredit":103,"amigo":104,"finscanner":105,"superium":106,"findom":107,"ecommoney":108,"ccloankz":109,"ecomkz":110,"tengebaikz":111,"icreditkz":112,"kachay":113,"creditplus":114}}
+                        
+                    //     success: function(res) {
+                    //         const fData = JSON.parse(res);
+                    //         if (Object.keys(fData).length !== 0) {
+                    //             handleFp(fData);
+                    //         }
+                    //         $(window).scrollTop(0);
+                    //         window.history.pushState({step: 3}, "step3", "/" + pathName);
+                    //     }
+                    // });
                 }
-
                 return false;
             });
         });
