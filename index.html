@@ -357,10 +357,9 @@
                 }
             }
 
-            let pathName = "http://credity.kz"
+            let pathName = window.location.search;
 
-            console.log("pathName " + pathName);
-            // window.history.pushState({step: 1}, "step1", "/" + pathName);
+            window.history.pushState({step: 1}, "step1", "/" + pathName);
 
             $(window).on('popstate', (e) => {
                 changeOriginalEvent(e.originalEvent.state);
@@ -374,7 +373,6 @@
             })(history.pushState);
 
             $('button.first').on('click', () => {
-                console.log("button.first");
                 window.history.pushState({step: 2}, "step2", "/" + pathName);
             });
 
