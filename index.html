@@ -280,7 +280,7 @@
             <div class="container">
                 <div class="inner_wrapper inner-cont">
                     <div class="title_holder">
-                        <div class="main_title">Деньги <br>почти у вас</div>
+                        <div class="main_title">Деньги <br>почти у тебя</div>
                         <div class="main_subtitle">Оставьте свой номер телефона</div>
                         <p>и получите интересные предложения</p>
                     </div>
@@ -308,7 +308,7 @@
                 <div class="inner_wrapper inner-cont">
                     <div class="title_holder">
                         <div class="main_title">Лучшие предложения</div>
-                        <div class="main_subtitle">Специально для Вас</div>
+                        <div class="main_subtitle">Специально для тебя</div>
                     </div>
                     <div class="offers_wrapper">
                     </div>
@@ -319,7 +319,7 @@
         <div class="container">
             <div class="inner_wrapper inner-cont">
                 <div class="bottom_text">
-                    <h3>Заполните заявку сейчас, и деньги у вас</h3>
+                    <h3>Заполните заявку сейчас, и деньги у тебя</h3>
                     <p>Услуга поиска кредитных предложений "Credity.kz" предлагает компания ТОО "Сейлздаблер". Сайт не предоставляет платных услуг кредитных продуктов для клиентов, а именно предлагает клиенту список предложений кредитных учреждений, некредитных финансовых организаций, к которым клиент может обратиться с целью оформления заявки на кредитный продукт. Проект не является банком или кредитором, не относится к финансовым учреждениям и не несет ответственности за последствия любых заключенных договоров кредитования или поручительства перед ним. Минимальная процентная ставка у некоторых партнеров составляет 0,01%. Чтобы оформить заявку на получение займа, необходимо заполнить анкету на сайте проекта. Совершая любые действия на сайте, вы должны предоставить свое согласие на обработку персональных данных и согласие на получение рекламных материалов. Вы ознакомились и согласны с Договором публичной оферты и Тарифами сервиса. Сервис "Credity.kz" использует куки для предоставления услуг. Условия хранения или доступа к cookie Вы можете настроить в своем браузере. Сервис предназначен для лиц в возрасте от 18 лет. Расчет в предоставленных на сайте калькуляторах основывается на среднем показателе процентной ставки, которая будет предложена финансовыми организациями.</p>
                 </div>
             </div>
@@ -459,39 +459,41 @@
 
         let isFpTimeouted = false;
         async function goUrl(obj, mfKey) {
-            if (!isFpTimeouted) {
-                let waitTime = 0;
-                while (!window.fpData || !window.fpData.uniq_code) {
-                    if (waitTime > 2000) {
-                        isFpTimeouted = true;
-                        break;
-                    }
-                    await new Promise(res => setTimeout(res, 200));
-                    waitTime += 200;
-                }
-            }
-            let goUrl = obj.getAttribute("href")
+            return true
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "/add_clicks_stat");
+            // if (!isFpTimeouted) {
+            //     let waitTime = 0;
+            //     while (!window.fpData || !window.fpData.uniq_code) {
+            //         if (waitTime > 2000) {
+            //             isFpTimeouted = true;
+            //             break;
+            //         }
+            //         await new Promise(res => setTimeout(res, 200));
+            //         waitTime += 200;
+            //     }
+            // }
+            // let goUrl = obj.getAttribute("href")
 
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
+            // let xhr = new XMLHttpRequest();
+            // xhr.open("POST", "/add_clicks_stat");
 
-            let windowReference = window.open();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    console.log(xhr.responseText);
-                    goUrl = goUrl + '&tid5=' + xhr.responseText;
-                    console.log(goUrl);
+            // xhr.setRequestHeader("Accept", "application/json");
+            // xhr.setRequestHeader("Content-Type", "application/json");
 
-                    windowReference.location = goUrl;
-                }};
+            // let windowReference = window.open();
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === 4) {
+            //         console.log(xhr.responseText);
+            //         goUrl = goUrl + '&tid5=' + xhr.responseText;
+            //         console.log(goUrl);
 
-            xhr.send(JSON.stringify({
-                'fp': window.fpData ? window.fpData.uniq_code : null,
-                'mf_key': mfKey,
-            }));
+            //         windowReference.location = goUrl;
+            //     }};
+
+            // xhr.send(JSON.stringify({
+            //     'fp': window.fpData ? window.fpData.uniq_code : null,
+            //     'mf_key': mfKey,
+            // }));
         }
 
         function getFp(fp) {
