@@ -57,8 +57,9 @@
                             </div>
                         </div>
 
-                        <a href="{offer}">offer link</a> или <a href="{offer}&offer_id=1">offer 1</a>
-
+                        <a onclick="keitaroLead();" href="{offer}&offer_id=10">MFO | Zaimer KZ CPS</a>
+                        <a href="{offer}&offer_id=12">MFO | Moneyman KZ CPS</a>
+                        <a href="{offer}&offer_id=15">MFO | Creditbar KZ CPS</a>
 
                         <div class="intro-bottom">
                             <div class="slider_wrapper">
@@ -532,7 +533,7 @@
         $(function(){
             function changeOriginalEvent(state) {
                 console.log("changeOriginalEvent");
-                if (state.step === 0) {
+                if (!state || state.step === 0) {
                     return false;
                 } else {
                     let steps = $('.step-page');
