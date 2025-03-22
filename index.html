@@ -43,15 +43,6 @@
                     <div class="intro">
                         <div class="intro-head">
                             <div class="intro-title">
-
-                                dfslkjkl
-                                <span id="ae056cc2-5936-eb62-7971-2f62ac21acde"></span>
-                                <script>
-                                document.write('<a href="{offer}&offer_id=10&'+getQueryParam("_subid")+'">REPLACE</a>');
-                                
-                                document.write('<a href="{offer}&offer_id=12&'+getQueryParam("_subid")+'">REPLACE 12</a>');</script>
-                                </script>
-                                
                                 <div class="main_title">Ну очень <br>быстрые деньги</div>
                                 <div class="main_subtitle">Мгновенное начисление <span>за 5 минут</span></div>
                             </div>
@@ -323,7 +314,7 @@
                         <div class="offer offer-block-new" data-adv-key="zaimerkz">
                             <div class="offer-key" style="display: none;">zaimerkz</div>
                             <div class="label red">Лучшее для тебя</div>
-                            
+
                             <a class="body-card-logo dynamic-link" href="{offer}&offer_id=10" onclick="return goUrl(this, 'zaimerkz');" target="_blank">
                                 <img src="/images/banks/zaimer.png" class="offer-logo" alt="робот онлайн займов">
                             </a>
@@ -706,9 +697,10 @@
 
         <!-- Keitaro tracking script -->
         <script type='application/javascript'>
+            const camp_id = getQueryParam("camp_id", false)
             if (!window.KTracking)
                 {
-                    window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://ads.credity.kz/B5ncW3', P_PATH:'https://ads.credity.kz/1e9341e/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='https://ads.credity.kz/js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)}
+                    window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://ads.credity.kz/' + camp_id, P_PATH:'https://ads.credity.kz/1e9341e/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='https://ads.credity.kz/js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)}
                 )();
         </script>
         <noscript><img height='0' width='0' alt='' src='https://ads.credity.kz/B5ncW3'/></noscript>

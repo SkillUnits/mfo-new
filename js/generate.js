@@ -12,7 +12,7 @@
 
     let source = document.currentScript.getAttribute('source');
     let jsCode = makeid233(16);
-
+    const tid = Math.floor(Math.random() * 1000000000);
     let frameLinks = [
                     'https://swco.cc/fp/frame',
             ];

@@ -9,10 +9,9 @@ function getQueryParam(param, withName=true) {
 function keitaroLead() {
     const revenue = 0;
     const status = 'lead';
-    const tid = Math.floor(Math.random() * 1000000000);
     KTracking.reportConversion(revenue, status, {tid});
 }
 
 function keitaroConvertion(status) {
-    KTracking.reportConversion(0, status)
+    KTracking.reportConversion(0, status, {tid})
 }
