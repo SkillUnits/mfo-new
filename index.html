@@ -13,21 +13,11 @@
     <link rel="stylesheet" media="all" href="css/ion.rangeSlider.css">
     <link rel="stylesheet" type="text/css" href="css/slick.min.css">
 
-<!-- Keitaro tracking script -->
-    <script type='application/javascript'>
-        if (!window.KTracking){window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://ads.credity.kz/B5ncW3', P_PATH:'https://ads.credity.kz/1e9341e/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)})();
-    </script>
-    <noscript><img height='0' width='0' alt='' src='https://ads.credity.kz/B5ncW3'/></noscript>
-
-    <script type="application/javascript">
-        document.getElementById('ae056cc2-5936-eb62-7971-2f62ac21acde').innerHTML = '<a href="https://ads.messageshe.online/9M3HngPP?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
-        consolr.log('<a href="https://ads.messageshe.online/9M3HngPP?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>');
-    </script>
-
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/ion.rangeSlider.js"></script>
     <script src="js/jquery.mask.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/tracker.js"></script>
 </head>
 <body>
     <!-- HEADER :: START-->
@@ -45,9 +35,6 @@
             </div>
         </div>
     </header>
-    dfslkjkl
-    <span id="ae056cc2-5936-eb62-7971-2f62ac21acde"></span>
-
     <div class="main" id="mainContent">
         <div id="fp-field" style="display: none;"></div>
         <div class="first_page step-page" data-step="1">
@@ -57,13 +44,14 @@
                         <div class="intro-head">
                             <div class="intro-title">
 
-
-                                <script>document.write('<a href="https://ads.credity.kz/?_lp=1&'+window.location.search.substring(1)+'">REPLACE</a>');</script>
+                                dfslkjkl
+                                <span id="ae056cc2-5936-eb62-7971-2f62ac21acde"></span>
                                 <script>
-                                    console.log(window.location.search.substring(1));
+                                document.write('<a href="{offer}&offer_id=10&'+getQueryParam("_subid")+'">REPLACE</a>');
+                                
+                                document.write('<a href="{offer}&offer_id=12&'+getQueryParam("_subid")+'">REPLACE 12</a>');</script>
                                 </script>
-
-
+                                
                                 <div class="main_title">Ну очень <br>быстрые деньги</div>
                                 <div class="main_subtitle">Мгновенное начисление <span>за 5 минут</span></div>
                             </div>
@@ -335,7 +323,8 @@
                         <div class="offer offer-block-new" data-adv-key="zaimerkz">
                             <div class="offer-key" style="display: none;">zaimerkz</div>
                             <div class="label red">Лучшее для тебя</div>
-                            <a class="body-card-logo" href="{offer}&offer_id=10" onclick="return goUrl(this, 'zaimerkz');" target="_blank">
+                            
+                            <a class="body-card-logo dynamic-link" href="{offer}&offer_id=10" onclick="return goUrl(this, 'zaimerkz');" target="_blank">
                                 <img src="/images/banks/zaimer.png" class="offer-logo" alt="робот онлайн займов">
                             </a>
                             <ul class="offer-info">
@@ -565,6 +554,7 @@
             })(history.pushState);
 
             $('button.first').on('click', () => {
+                keitaroConvertion("calculation");
                 window.history.pushState({step: 3}, "step3", "/" + pathName);
             });
 
@@ -617,17 +607,6 @@
 
     <script src="js/view_stat.js" source="credity.kz"></script>
     <script>
-        function keitaroLead() {
-            const revenue = 0;
-            const status = 'lead';
-            const tid = Math.floor(Math.random() * 1000000000);
-            KTracking.reportConversion(revenue, status, {tid});
-        }
-
-        function keitaroOfferSelect() {
-            KTracking.reportConversion(0, 'offer_selection')
-        }
-
         function prehandleFp(fData) {
             // console.log(fData);
             window.fpData = fData;
@@ -724,4 +703,13 @@
             getOffers();
         </script>
         <script src="js/generate.js" source="credity.kz" async=""></script>
+
+        <!-- Keitaro tracking script -->
+        <script type='application/javascript'>
+            if (!window.KTracking)
+                {
+                    window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://ads.credity.kz/B5ncW3', P_PATH:'https://ads.credity.kz/1e9341e/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='https://ads.credity.kz/js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)}
+                )();
+        </script>
+        <noscript><img height='0' width='0' alt='' src='https://ads.credity.kz/B5ncW3'/></noscript>
 </body></html>
