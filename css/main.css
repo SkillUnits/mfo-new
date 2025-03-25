@@ -532,7 +532,7 @@ ul li {
 
 .main .title_holder {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .main .title_holder p {
     display: inline-block;
@@ -619,7 +619,7 @@ ul li {
     border-radius: 16px;
     padding: 16px 10px 16px;
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 28px;
     border: 1px solid rgba(0, 86, 59, 1);
 }
 .main .third_page .offers_wrapper .body-card-logo {
@@ -1844,6 +1844,7 @@ ul li {
 
 .bg {
     position: relative;
+    margin-top: 20px;
 }
 .bg::before {
     content: "";
@@ -1867,6 +1868,7 @@ ul li {
     backdrop-filter: blur(60px);
     color: rgba(0, 0, 0, 1) !important;
     font-weight: 500 !important;
+    margin-bottom: 0 !important;
 }
 .offers_bg_image {
     width: 120px;
