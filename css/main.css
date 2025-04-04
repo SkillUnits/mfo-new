@@ -288,7 +288,6 @@ ul li {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 0;
-    background-loading: lazy;
     z-index: -1;
 }
 .main .first_page .intro-title {
